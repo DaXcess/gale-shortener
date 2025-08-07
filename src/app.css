@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+html {
+	background: linear-gradient(180deg, #111827, #1f2937);
+}
+
+:root {
+	font-family: Poppins, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+}
