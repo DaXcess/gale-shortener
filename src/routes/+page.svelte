@@ -1,23 +1,13 @@
 <script lang="ts">
-	import { useRegisterSW } from 'virtual:pwa-register/svelte';
-	import OfflineReady from '$components/offline-ready.svelte';
-	import NeedRefresh from '$components/need-refresh.svelte';
 	import Generator from '$components/generator.svelte';
 	import { SiGithub } from '@icons-pack/svelte-simple-icons';
 	import { Dot } from 'lucide-svelte';
 	import gale from '$lib/assets/gale.png';
-
-	const { updateServiceWorker, needRefresh, offlineReady } = useRegisterSW({
-		immediate: true
-	});
 </script>
 
 <div class="flex h-screen flex-col">
 	<main class="flex grow flex-col items-center justify-center">
 		<h1 class="m-8 text-center text-4xl font-bold">Gale Shortener</h1>
-
-		<OfflineReady visible={$offlineReady} onClose={() => offlineReady.update(() => false)} />
-		<NeedRefresh visible={$needRefresh} {updateServiceWorker} />
 
 		<Generator />
 	</main>

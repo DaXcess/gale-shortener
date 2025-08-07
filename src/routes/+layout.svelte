@@ -13,7 +13,16 @@
 	import '@fontsource/poppins/800.css';
 	import '@fontsource/poppins/900.css';
 
+	import OfflineReady from '$components/offline-ready.svelte';
+	import NeedRefresh from '$components/need-refresh.svelte';
+
+	import { useRegisterSW } from 'virtual:pwa-register/svelte';
+
 	let { children } = $props();
+
+	const { updateServiceWorker, needRefresh, offlineReady } = useRegisterSW({
+		immediate: true
+	});
 </script>
 
 <svelte:head>
@@ -21,3 +30,6 @@
 </svelte:head>
 
 {@render children?.()}
+
+<OfflineReady visible={$offlineReady} onClose={() => offlineReady.update(() => false)} />
+<NeedRefresh visible={$needRefresh} {updateServiceWorker} />
