@@ -62,7 +62,7 @@
 			return;
 		}
 
-		// window.location.href = `gale://profile/import/${code}`;
+		window.location.href = `gale://profile/import/${code}`;
 	});
 
 	function copyCode() {
