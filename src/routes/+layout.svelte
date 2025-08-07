@@ -18,6 +18,11 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<title>Gale Shortener</title>
+
+	<meta name="title" content="Gale Shortener" />
+	<meta name="description" content="Turn Thunderstore profile codes into easily sharable links" />
+	<meta name="language" content="English" />
 </svelte:head>
 
 {@render children?.()}
