@@ -24,7 +24,7 @@
 
 		const url = new URL(window.location.href);
 
-		return `${url.protocol}//${url.host}/?p=${code}`;
+		return `${url.protocol}//${url.host}/p?${code}`;
 	}
 
 	function submit() {

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
 	import { Check, CircleX, Copy } from 'lucide-svelte';
@@ -43,7 +44,7 @@
 		}
 	}
 
-	const { id }: { id: string } = $props();
+	const id = page.url.searchParams.keys().next().value;
 
 	let invalid = $state(false);
 	let code = $state<string | null>(null);
@@ -51,7 +52,7 @@
 
 	onMount(() => {
 		if (!id) {
-			goto('/', { invalidateAll: true });
+			goto('/');
 			return;
 		}
 
@@ -115,7 +116,7 @@
 
 			<button
 				class="float-right cursor-pointer rounded-lg bg-green-700 px-4 py-2 text-xs transition-colors hover:bg-green-600"
-				onclick={() => goto('/', { invalidateAll: true })}
+				onclick={() => goto('/')}
 			>
 				Generate your own link
 			</button>
