@@ -51,12 +51,11 @@
 
 	onMount(() => {
 		if (!id) {
-			goto('/');
+			goto('/', { invalidateAll: true });
 			return;
 		}
 
 		code = decodeShortId(id);
-		console.log({ code });
 		if (!code) {
 			invalid = true;
 			return;
@@ -116,7 +115,7 @@
 
 			<button
 				class="float-right cursor-pointer rounded-lg bg-green-700 px-4 py-2 text-xs transition-colors hover:bg-green-600"
-				onclick={() => goto('/')}
+				onclick={() => goto('/', { invalidateAll: true })}
 			>
 				Generate your own link
 			</button>
