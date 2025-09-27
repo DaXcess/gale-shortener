@@ -62,8 +62,7 @@
 			return;
 		}
 
-		// Disabled until Gale updates
-		// window.location.href = `gale://profile/import/${code}`;
+		window.location.href = `gale://profile/import/${code}`;
 	});
 
 	function copyCode() {
@@ -104,17 +103,7 @@
 				</button>
 			</div>
 			<p class="text-sm leading-relaxed text-slate-400">
-				Due to a bug in <a
-					class="text-green-500 underline"
-					href="https://kesomannen.com/gale"
-					target="_blank"
-				>
-					Gale
-				</a>
-				automatic imports are disabled until further notice. Once the bug has been fixed, the app will
-				be opened automatically upon visiting this page.
-
-				<!-- If you have <a
+				If you have <a
 					class="text-green-500 underline"
 					href="https://kesomannen.com/gale"
 					target="_blank"
@@ -122,14 +111,14 @@
 					Gale
 				</a>
 				installed, this page should automatically open it and import the code. If not, you can copy the
-				code and paste it manually into the app. -->
+				code and paste it manually into the app.
 			</p>
 
 			<div class="flex justify-end gap-2">
 				<button
 					class="cursor-pointer rounded-lg bg-green-700 px-4 py-2 text-xs transition-colors hover:bg-green-600 disabled:cursor-not-allowed disabled:!bg-gray-600"
 					onclick={() => (window.location.href = `gale://profile/import/${code}`)}
-					disabled={true || !code}
+					disabled={!code}
 				>
 					Open in Gale
 				</button>
