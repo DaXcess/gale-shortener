@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Generator from '$components/generator.svelte';
 	import { SiGithub } from '@icons-pack/svelte-simple-icons';
 	import { Dot } from 'lucide-svelte';
 	import gale from '$lib/assets/gale.png';
@@ -7,9 +6,20 @@
 
 <div class="flex h-screen flex-col">
 	<main class="flex grow flex-col items-center justify-center">
-		<h1 class="m-8 text-center text-4xl font-bold">Gale Shortener</h1>
+		<h1 class="m-4 text-center text-4xl font-bold">Gale Shortener has been sunset</h1>
 
-		<Generator />
+		<p class="text-sm text-gray-400">
+			Modern versions of Gale have a neat feature called <a
+				class="text-green-500 underline"
+				href="https://github.com/Kesomannen/gale/wiki/Profile-sync/"
+			>
+				Profile sync
+			</a>, which has been in limited beta for a while, but is now available for the public to use.
+		</p>
+		<p class="text-sm text-gray-400">
+			This website has just been a pet project of mine, to learn some neat (and for this app, quite
+			useless) features for modern websites.
+		</p>
 	</main>
 
 	<footer class="flex flex-col items-center gap-2 p-4">
